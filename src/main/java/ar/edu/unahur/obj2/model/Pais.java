@@ -19,10 +19,10 @@ public class Pais {
         this.subRegion = dp.subRegion();
         this.poblacion = dp.poblacion();
         this.idiomas = dp.idiomas().stream()
-                .map(i -> i.name())
+                .map(Idioma::name)
                 .toList();
         this.limites = dp.limites();
-        this.area = dp.area();
+        this.area = dp.area() != null ? dp.area() : 0;
     }
 
     public Boolean esIsla(){
